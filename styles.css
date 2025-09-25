@@ -1,0 +1,54 @@
+        :root {
+            --primary-color: #4CAF50;
+            --secondary-color: #2196F3;
+            --success-color: #4CAF50;
+            --error-color: #F44336;
+        }
+
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f4f4;
+            transition: background-color 0.3s ease;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #e0e0e0;
+        }
+
+        .dark-mode .quiz-container {
+            background-color: #2d2d2d;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .answer-choice.selected {
+            background-color: var(--secondary-color) !important;
+            border-color: var(--secondary-color) !important;
+            color: white !important;
+        }
+
+        .answer-choice.correct {
+            background-color: var(--success-color) !important;
+            border-color: var(--success-color) !important;
+            color: white !important;
+            pointer-events: none;
+        }
+
+        .answer-choice.incorrect {
+            background-color: var(--error-color) !important;
+            border-color: var(--error-color) !important;
+            color: white !important;
+            pointer-events: none;
+        }
+        
+        .summary-item.correct .icon {
+            color: var(--success-color);
+        }
+
+        .summary-item.incorrect .icon {
+            color: var(--error-color);
+        }

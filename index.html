@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Quiz App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 transition-colors duration-300">
+
+    <button id="theme-switcher" class="absolute top-4 right-4 text-2xl transition-transform transform hover:scale-110 focus:outline-none">
+        <span class="icon text-gray-800 dark:text-gray-200">☀️</span>
+    </button>
+
+    <div id="quiz-screen" class="quiz-container w-full max-w-2xl bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 text-center transition-all duration-500 relative">
+        <div class="header flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-green-500">Quiz Time!</h1>
+            <span id="question-counter" class="text-lg font-semibold text-gray-500 dark:text-gray-400">Question 1 of 5</span>
+        </div>
+
+        <div class="w-full h-2 bg-gray-200 rounded-full mb-6 dark:bg-gray-700">
+            <div id="progress-bar" class="h-2 bg-green-500 rounded-full transition-all duration-300 ease-in-out" style="width: 0%;"></div>
+        </div>
+        <div id="timer" class="text-2xl font-bold text-red-500 mb-6"></div>
+        <p id="question" class="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200"></p>
+        <div class="answer-choices flex flex-col gap-4" id="answer-choices"></div>
+        <div class="flex justify-center md:justify-between items-center mt-8 space-x-4">
+            <button id="submit-btn" class="btn bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Submit</button>
+            <button id="next-btn" class="btn bg-green-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-green-600 transition-all duration-300 transform hover:-translate-y-1 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Next</button>
+        </div>
+    </div>
+
+    <div id="results-screen" class="quiz-container hidden w-full max-w-2xl bg-white dark:bg-gray-800 rounded-3xl shadow-xl p-8 md:p-12 text-center transition-all duration-500 relative">
+        <h2 class="text-3xl font-bold text-green-500 mb-4">Quiz Complete!</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-400 mb-2">Your Final Score is:</p>
+        <p id="final-score" class="text-6xl font-extrabold text-green-500 mb-8"></p>
+        
+        <ul class="summary-list text-left space-y-4" id="results-summary"></ul>
+        
+        <button id="restart-btn" class="btn bg-blue-500 text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:-translate-y-1 mt-8">Restart Quiz</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
