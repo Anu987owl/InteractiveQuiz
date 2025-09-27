@@ -8,5 +8,5 @@ The application incorporates several modern features to enhance the user experie
 Technologies used and their purpose ----------
 HTML5	Provides the semantic structure and content layout for the application.
 Tailwind CSS	Used for utility-first styling, ensuring rapid development and responsiveness.
-Vanilla JavaScript	Drives the core quiz logic, manages the timer, handles user input, and maintains the application state.
+JavaScript	Drives the core quiz logic, manages the timer, handles user input, and maintains the application state.
 GSAP (GreenSock)	Implements all high-performance, smooth UI animations and transitions.
